@@ -1,0 +1,41 @@
+----------------use critic method determine weight--------------------
+start load index data....
+bert index :[hit @ 1 hit @ 10 hit @ 50 MRR] [0.9138, 0.98308, 0.99128, 0.9410417870932649]
+gcn index :[hit @ 1 hit @ 10 hit @ 50 MRR] [0.43288, 0.72036, 0.84252, 0.5327552455583147]
+predicate index :[hit @ 1 hit @ 10 hit @ 50 MRR] [0.013428571428571429, 0.07345714285714286, 0.19997142857142858, 0.036520886155671305]
+start use critic method determine weight....
+each index weight: [0.3273 0.1781 0.3167 0.178 ]
+each embedding weight: [0.276 0.724 0.   ]
+save weight....
+2022-04-25 08:00:14.328556: I tensorflow/core/platform/cpu_feature_guard.cc:145] This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in non-MKL-DNN operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-25 08:00:14.348065: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2022-04-25 08:00:14.348659: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55b5803a10b0 executing computations on platform Host. Devices:
+2022-04-25 08:00:14.348763: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-04-25 08:00:14.349057: I tensorflow/core/common_runtime/process_util.cc:115] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+----------------get entity embedding--------------------
+GPU NUM: 0
+loading basic bert unit model from:  ../Save_model/DWY-NB_dwnbmodel_epoch_4.p
+train_ill num: 25000 /test_ill num: 25000 / train_ill & test_ill num: 0
+get bert embedding using time 443.226
+bert embedding shape:  (171027, 300)
+gcn embedding shape:  (171027, 400)
+predicate embedding shape:  (171027, 200)
+connect bert,gcn,predicate entity embedding shape:  (171027, 700)
+save entity embedding....
+----------------use sinkhorn method to entity alignment----------------
+loading entity embedding from: ../data/dwy-nb/dw_nb/DWY-NB_dwnb_emb_4.pkl
+loading other data from: ../data/dwy-nb/dw_nb/
+ent_vec shape: (171027, 700)
+2022-04-25 08:08:58.811382: I tensorflow/core/platform/cpu_feature_guard.cc:145] This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in non-MKL-DNN operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-25 08:08:58.819300: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2022-04-25 08:08:58.819796: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560da5a21350 executing computations on platform Host. Devices:
+2022-04-25 08:08:58.819842: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-04-25 08:08:58.820033: I tensorflow/core/common_runtime/process_util.cc:115] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+feature lenth is: 171027
+start calculate entity similarity
+93.38409753423184
+start entity alignment use sinkhorn method
+hits@1 : 98.60% hits@10 : 99.85% MRR : 99.13%
+100.4389256387949

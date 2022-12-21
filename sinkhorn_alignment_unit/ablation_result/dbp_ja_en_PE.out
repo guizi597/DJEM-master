@@ -1,0 +1,37 @@
+D:\Anaconda\envs\seu\python.exe F:/桂子的NLP/论文/BG-OTEA/sinkhorn_alignment_unit/entity_alignment.py
+2022-04-25 18:34:05.632167: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudart64_110.dll
+----------------use sinkhorn method to entity alignment----------------
+loading entity embedding from: ../data/dbp15k/ja_en/DBP15K_jaen_emb_4.pkl
+loading other data from: ../data/dbp15k/ja_en/
+ent_vec shape: (39594, 500)
+2022-04-25 18:34:17.125082: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-04-25 18:34:17.126272: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2022-04-25 18:34:17.158343: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1050 computeCapability: 6.1
+coreClock: 1.493GHz coreCount: 5 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 104.43GiB/s
+2022-04-25 18:34:17.158726: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudart64_110.dll
+2022-04-25 18:34:17.168852: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublas64_11.dll
+2022-04-25 18:34:17.169133: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublasLt64_11.dll
+2022-04-25 18:34:17.174449: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cufft64_10.dll
+2022-04-25 18:34:17.176941: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library curand64_10.dll
+2022-04-25 18:34:17.178700: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2022-04-25 18:34:17.183714: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cusparse64_11.dll
+2022-04-25 18:34:17.185747: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-25 18:34:17.185957: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-25 18:34:17.186707: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-25 18:34:17.187349: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-25 18:34:17.187560: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      
+2022-04-25 18:34:17.187730: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+feature lenth is: 39594
+start calculate entity similarity
+2022-04-25 18:34:17.302370: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 1800000000 exceeds 10% of free system memory.
+2022-04-25 18:34:21.255075: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 1800000000 exceeds 10% of free system memory.
+2022-04-25 18:34:24.574081: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 1800000000 exceeds 10% of free system memory.
+2022-04-25 18:34:25.597312: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 1800000000 exceeds 10% of free system memory.
+2022-04-25 18:34:28.893908: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 1800000000 exceeds 10% of free system memory.
+12.733799600000001
+start entity alignment use sinkhorn method
+hits@1 : 97.07% hits@10 : 99.71% MRR : 98.10%
+41.1627874

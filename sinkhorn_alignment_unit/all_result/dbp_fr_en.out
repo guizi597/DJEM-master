@@ -1,0 +1,16 @@
+----------------use sinkhorn method to entity alignment----------------
+loading entity embedding from: ../data/dbp15k/fr_en/DBP15K_fren_emb_4.pkl
+loading other data from: ../data/dbp15k/fr_en/
+ent_vec shape: (39654, 700)
+2022-04-19 13:55:41.433192: I tensorflow/core/platform/cpu_feature_guard.cc:145] This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in non-MKL-DNN operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-19 13:55:42.481577: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2399990000 Hz
+2022-04-19 13:55:42.485548: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55703ce09eb0 executing computations on platform Host. Devices:
+2022-04-19 13:55:42.485645: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-04-19 13:55:42.590787: I tensorflow/core/common_runtime/process_util.cc:115] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+feature lenth is: 39654
+start calculate entity similarity
+15.256901673972607
+start entity alignment use sinkhorn method
+hits@1 : 99.37% hits@10 : 99.99% MRR : 99.63%
+8.081822499632835

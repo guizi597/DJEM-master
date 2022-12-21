@@ -1,0 +1,37 @@
+----------------use critic method determine weight--------------------
+start load index data....
+start use critic method determine weight....
+each index weight: [0.3532 0.2142 0.2518 0.1808]
+each embedding weight: [0.23 0.77 0.  ]
+save weight....
+2022-04-18 21:05:21.531086: I tensorflow/core/platform/cpu_feature_guard.cc:145] This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in non-MKL-DNN operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-18 21:05:21.542804: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2022-04-18 21:05:21.543345: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55cc4c832060 executing computations on platform Host. Devices:
+2022-04-18 21:05:21.543416: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-04-18 21:05:21.543660: I tensorflow/core/common_runtime/process_util.cc:115] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+----------------get entity embedding--------------------
+GPU NUM: 0
+loading basic bert unit model from:  ../Save_model/DBP15K_zhenmodel_epoch_4.p
+train_ill num: 4500 /test_ill num: 10500 / train_ill & test_ill num: 0
+get bert embedding using time 101.575
+bert embedding shape:  (38960, 300)
+gcn embedding shape:  (38960, 400)
+predicate embedding shape:  (38960, 200)
+connect bert,gcn,predicate entity embedding shape:  (38960, 700)
+save entity embedding....
+----------------use sinkhorn method to entity alignment----------------
+loading entity embedding from: ../data/dbp15k/zh_en/DBP15K_zhen_emb_4.pkl
+loading other data from: ../data/dbp15k/zh_en/
+2022-04-18 21:07:25.322828: I tensorflow/core/platform/cpu_feature_guard.cc:145] This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in non-MKL-DNN operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-18 21:07:25.332252: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2022-04-18 21:07:25.332743: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55c29c2533a0 executing computations on platform Host. Devices:
+2022-04-18 21:07:25.332792: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-04-18 21:07:25.333165: I tensorflow/core/common_runtime/process_util.cc:115] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+feature lenth is: 38960
+start calculate entity similarity
+9.517336665885523
+start entity alignment use sinkhorn method
+hits@1 : 95.42% hits@10 : 99.47% MRR : 97.05%
+10.649041291791946

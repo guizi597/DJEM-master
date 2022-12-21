@@ -1,0 +1,38 @@
+D:\Anaconda\envs\seu\python.exe F:/桂子的NLP/论文/BG-OTEA/sinkhorn_alignment_unit/entity_alignment_no_sinkhorn.py
+2022-04-25 14:30:51.044293: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudart64_110.dll
+To use data.metrics please install scikit-learn. See https://scikit-learn.org/stable/index.html
+2022-04-25 14:30:54.514988: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-04-25 14:30:54.516018: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2022-04-25 14:30:54.580571: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1050 computeCapability: 6.1
+coreClock: 1.493GHz coreCount: 5 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 104.43GiB/s
+2022-04-25 14:30:54.580962: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudart64_110.dll
+2022-04-25 14:30:54.590994: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublas64_11.dll
+2022-04-25 14:30:54.591198: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublasLt64_11.dll
+2022-04-25 14:30:54.596508: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cufft64_10.dll
+2022-04-25 14:30:54.599101: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library curand64_10.dll
+2022-04-25 14:30:54.600930: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2022-04-25 14:30:54.605588: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cusparse64_11.dll
+2022-04-25 14:30:54.607414: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-25 14:30:54.607645: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-25 14:30:54.608490: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-25 14:30:54.609165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-25 14:30:54.609372: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      
+2022-04-25 14:30:54.609506: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+----------------don't use sinkhorn method to entity alignment----------------
+loading entity embedding from: ../data/dbp15k/fr_en/DBP15K_fren_emb_4.pkl
+loading other data from: ../data/dbp15k/fr_en/
+ent_vec shape: (39654, 700)
+feature lenth is: 39654
+start calculate entity similarity
+start entity alignment don't use sinkhorn method
+-----test start-----
+
+Cosine similarity of basic bert unit embedding res:
+hit @ 1: 0.95927    hit @10 : 0.99527    hit @ 25: 0.99747    hit @ 50: 0.99860    
+MRR:0.97381
+test using time: 685.276
+--------------------
+696.2251478999999
